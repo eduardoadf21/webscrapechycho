@@ -1,4 +1,4 @@
 # webscrapechycho
 webscrabing chycho's blog
-## requisites
+## requirements
 Python, Selenium, BeautifulSoup, pandas
