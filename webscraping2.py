@@ -9,6 +9,7 @@ homepage = request.read()
 
 homepageSoup = BeautifulSoup(homepage, "html.parser")
 
+#<div class ="blog-posts hfeed">
 posts = homepageSoup.findAll("div",{"class":"post hentry uncustomized-post-template"})
 dates = homepageSoup.findAll("h2",{"class":"date-header"})
 
