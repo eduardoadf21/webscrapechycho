@@ -19,15 +19,13 @@ def get_posts():
 
 c = 0
 nextPage = homepageSoup.find_all("a",{"class":"blog-pager-older-link"}, href=True)
-while nextPage is not None and c < 10:
-    c += 1
+while nextPage is not None:
     my_url = nextPage[0]['href']
     request = urlopen(my_url)
     homepage = request.read()
     homepageSoup = BeautifulSoup(homepage, features="lxml")
     nextPage = homepageSoup.find_all("a",{"class":"blog-pager-older-link"}, href=True)
     posts = get_posts()
-    print(posts['titles'])
     print(nextPage[0]['href'])
 
 request.close()
