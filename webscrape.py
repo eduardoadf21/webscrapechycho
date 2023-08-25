@@ -15,7 +15,6 @@ homepageSoup = BeautifulSoup(homepage, "html.parser")
 dates = homepageSoup.findAll("div",{"class":"date-outer"})
 
 
-
 def get_posts(dates, posts):
     for date in dates:
         page_posts = (date.findAll('div',{"class":"post-outer"}))
@@ -47,8 +46,5 @@ while nextPage is not None:
     homepageSoup = BeautifulSoup(homepage, "html.parser")
     collection_name.insert_many(posts)
 
-
-#with open('data.json', 'w', encoding='utf-8') as f:
-#    json.dump(posts, f, ensure_ascii=False, indent=4)
 
 request.close()
