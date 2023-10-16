@@ -1,4 +1,4 @@
 # webscrapechycho
 webscraping chycho's blog
 ## requirements
-Python, Selenium, BeautifulSoup, mongoDB
+Python, BeautifulSoup, mongoDB
