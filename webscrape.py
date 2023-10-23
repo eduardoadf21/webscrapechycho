@@ -5,7 +5,7 @@ import json
 
 from pymongo_get_database import get_database
 dbname = get_database()
-collection_name = dbname["posts2"]
+collection_name = dbname["posts3"]
 
 my_url = "https://chycho.blogspot.com/"
 
@@ -25,9 +25,7 @@ def get_posts(dates, posts):
             post['title'] = title.replace('\n','')
             post['date'] = date.find('h2',{"class":"date-header"}).text
             post['body'] = page_post.find('div',{"class":"post-body entry-content"}).prettify()
-            links = page_post.findAll('strong')
-            for link in links:
-                post['links'] = str(link.find('a',href=True))
+            post['tag'] = []
             posts.append(post)
 
     print(posts)
