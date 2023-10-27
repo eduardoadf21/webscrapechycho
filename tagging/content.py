@@ -1,9 +1,15 @@
+from pymongo_get_database import get_database
+
+chychoVault = get_database()
+posts = chychoVault["posts3"]
+
 math_articles = ("A Blast from the Past: The Language of Mathematics on Google Maps Street View",
         "An Exercise for the Mind: a 10 by 10 Math Puzzle: a Pattern Recognition Game: Meditation on an Open Maze",
         "Bill Nye, Brian Greene, Neil deGrasse Tyson, and Lawrence Krauss have a brilliant little discussion on the limitations of mathematics, and its importance and relevance to humanity",
         "Why is Math Important? ")
 
-
+for title in math_articles:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'math_articles'}})
 
 
 privacy =  ("""Whispering WikiLeaks' Vault 7 "Year Zero": CIA Hacking Tools Revealed""",
@@ -17,6 +23,8 @@ privacy =  ("""Whispering WikiLeaks' Vault 7 "Year Zero": CIA Hacking Tools Reve
             "Bradley Manning and the trial of the United States Military",
             "A Candid Speaker and Three Hypocrites address the 67th session of the United Nations General Assembly ")
 
+for title in privacy:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'privacy'}})
 
 
 four_20 = ("Happy 420 Live Stream: Open Discussion: Education, Health, Relationships, Comic Books, Music, Politics and more [ASMR, April 20, 2019]",
@@ -31,15 +39,21 @@ four_20 = ("Happy 420 Live Stream: Open Discussion: Education, Health, Relations
         "Washington State and Colorado Join the Fray: Cannabis Legalized",
         "How to End Prohibition: Supporting Grassroots Organizations ")
 
+for title in four_20:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'420'}})
 
 
 
 afghanistan = "The shit show that is Afghanistan: “We will survive. But they will be taking the war back to America!”",
 
+posts.find_one_and_update({'title': afghanistan},{'$push':{'tag':'afghan'}})
 
 
 africa =  ("The future of Africa looks bleak, here is why",
           "“We Come as Friends”, a Look at Contemporary Colonialism in Africa, a New Documentary from Hubert Sauper, the Director of “Darwin's Nightmare”")
+
+for title in africa:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'africa'}})
 
 
 armenia = ("In Commemoration of the Armenian Genocide: How Christianity Came to Armenia, Myth vs. Fact, Two Tales from a Priest",
@@ -47,8 +61,12 @@ armenia = ("In Commemoration of the Armenian Genocide: How Christianity Came to 
     "Sharing a Story from My Father: In Commemoration of the Armenian Genocide",
     "- A Dinner Conversation: Israel and Armenia, Oppression and Genocides, Reality and Denials")
 
+for title in armenia:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'armenia'}})
+
 
 bahrain = "What’s Really Going On: Bahrain vs. Ukraine, Can You Spot the Difference?",
+posts.find_one_and_update({'title': bahrain},{'$push':{'tag':'bahrain'}})
 
 
 
@@ -58,11 +76,16 @@ canada = ("The Best Advice Regarding the Importance of Education That You Will E
         "Here is What’s Going On in Canada, Part 1: Two Telltale Speeches by Stephen Harper",
         "An Apology from Canada to Palestine and the Rest of the World")
 
+for title in canada:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'canada'}})
+
 
 egypt = "A Music Video from Egypt with a Message: “Some people are dancing and others are dying, and the loudesAt voice in the party is the voice of silence”, Cairokee"
+posts.find_one_and_update({'title': egypt},{'$push':{'tag':'egypt'}})
 
 
 france = "France Has Forgotten the Battle of Algiers, Africa Never Will: “Ordinary Victories” by Manu Larcenet"
+posts.find_one_and_update({'title': france},{'$push':{'tag':'france'}})
 
 
 
@@ -73,12 +96,19 @@ iraq =("Actual Jubilation in Crimea vs. Orchestrated Celebration in Iraq: Can Yo
         "On this tenth anniversary of the invasion of Iraq, a reminder, according to the UN charter, the invasion was illegal",
         "Dahr Jamail on what happened in Fallujah")
 
+for title in iraq:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'iraq'}})
+
 
 iran =  ("Target is Still Iran: Clear Cutting the Middle East and the Coming Blood Bath (Mapping World War III)",
         "Lest we forget, an attack on Syria is an attack on Iran and a threat to the Shanghai Cooperation Organization")
 
+for title in iran:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'iran'}})
+
 
 ireland = "Graffiti and Murals from Northern Ireland: Taking a Walk in Belfast in Autumn of 1998"
+posts.find_one_and_update({'title': ireland},{'$push':{'tag':'ireland'}})
 
 
 israel_palestine = ("1997 Address by Nelson Mandela at the International Day of Solidarity with the Palestinian People",
@@ -86,13 +116,20 @@ israel_palestine = ("1997 Address by Nelson Mandela at the International Day of 
     "An Apology from Canada to Palestine and the Rest of the World",
     "Regarding Israel and Palestine, and the new offensive in Gaza")
 
+for title in israel_palestine:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'israel_palestine'}})
+
 
 
 syria = ("One, Two, Three, Four, When Are We Going to Go to War? Five, Six, Seven, Eight, Are You Out of Your F__king Mind! (What We Should Know Before Waging War on Syria)",
     "Lest we forget, an attack on Syria is an attack on Iran and a threat to the Shanghai Cooperation Organization")
 
+for title in syria:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'syria'}})
+
 
 turkey = "Excellent Interview and Discussion on the Current State of Affairs in Turkey and What the Future May Hold for the Region",
+posts.find_one_and_update({'title': turkey},{'$push':{'tag':'turkey'}})
 
 
 
@@ -102,14 +139,20 @@ ukraine = ("Actual Jubilation in Crimea vs. Orchestrated Celebration in Iraq: Ca
     "What’s Really Going On: Bahrain vs. Ukraine, Can You Spot the Difference?",
     "What Cold War? This Cold War: Death Follows McCain to the Ukraine as the Armenia-ultimatum to Screw over Russia Fails Again for the EU and the U.S.")
 
+for title in ukraine:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'ukraine'}})
+
 
 nine_eleven =  ("When Mainstream Media’s Narrative Collapses: Building 7",
     "What will make or break the United States of America is the truth about 9/11: Investigate the theories behind the conspiracies")
 
+for title in nine_eleven:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'911'}})
+
 
 
 economics = ("The Mathematics of Economics",
-            "Introduction to Economics: The Next Phase of the Economic Collapse Has Begun, Be Prepared: I’m Short the Market, Here Is Why",
+            "The Next Phase of the Economic Collapse Has Begun, Be Prepared: I’m Short the Market, Here Is Why",
             "The Mantra on Wall Street Is ‘Don’t Fight the Fed’, but Do You Know What the Fed Is Doing? And Where Did Belgium Get $141 Billion to Purchase U.S. Treasury Bonds?",
             "Fragmentation of Bitcoin Community Begins after the Collapse of Mt. Gox and Secondmarket’s Wall Street Exchange Proposal",
             "The Bitcoin Bubble, or is it? Two Charts, Historical Price Movement, and the Conspiracy",
@@ -122,11 +165,16 @@ economics = ("The Mathematics of Economics",
             "Recolonization of Africa, a Symptom of Our Addiction to Growth: Differential Accumulation, Why GDP Growth Rates Influence Foreign Policy",
             "Precedent Set: $5 a Gallon Gasoline Leads to Easing of Environmental Regulations for Refineries in California ")
 
+for title in economics:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'economics'}})
 
 science = ("Best Explanation of Quantum Field Theory That You Will Ever Hear, Provided by Sean Carroll in Less than 2 Minutes at the 46th Annual Fermilab Users Meeting",
         "Bill Nye, Brian Greene, Neil deGrasse Tyson, and Lawrence Krauss have a brilliant little discussion on the limitations of mathematics, and its importance and relevance to humanity",
         "Coming Out of the Dark Ages, Psychedelic Science, and Freedom Over Consciousness: Introduction to the Benefits of Cannabis, Psilocybin, Ayahuasca, LSD, DMT, and Ibogaine",
         "Excerpts from Carl Sagan's Cosmos ")
+
+for title in science:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'science'}})
 
 
 
@@ -137,12 +185,16 @@ environment = ("Heads-up Canada, B.C. Government Has Given Industry Access to Ou
     "Colony Collapse Disorder: Why the Bees are Dying",
     "David Suzuki on the environment ")
 
+for title in environment:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'environment'}})
 
 
 
 life_death = ("Some Primary Lessons from Some Amazing Teachers",
     "Some advice to those who have lost loved ones ")
 
+for title in life_death:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'life_death'}})
 
 
 
@@ -154,6 +206,9 @@ entertainment = ("Let's Talk About Music: Falling in Love with Rush: Some Advice
     "Soundwave 2008 Music Festival",
     "Soundwave 2007 Music Festival ")
 
+for title in entertainment:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'entertainment'}})
+
 
 
 
@@ -162,6 +217,8 @@ education = ("Free Radical Media Podcast: Mathematics, Education and True Learni
     "Excerpts from three articles on education: Dorothy Sayers, Richard P. Feynman, John Taylor Gatto",
     "Why is Math Important? ")
 
+for title in education:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'education'}})
 
 
 
@@ -174,17 +231,24 @@ games_gambling  = ("How to Play Street Dice: A Simplified Craps Game",
     "The Seduction of Dice, The Philosophy of Craps",
     "17th World Diplomacy Championship and DipCon 40")
 
-
+for title in games_gambling:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'games_gambling'}})
 
 
 psychedelics = ("The Cornfield: A Higher Perspective, an Analogy: The Power of Entheogens Explained, What They Allow Us to Do - Full Live Stream Session at: Entheogens: Open Discussion, Session #2, Twitch Live Stream, October 5, 2018",
     "Open Discussion on Entheogens: Twitch Live Stream (NOTE: Fire Alarm Goes Off At 1:17:00, Loud Sound)",
     "Breaking the Master Cleanse with Brazilian Cubensis and Salvia Divinorum")
 
+for title in psychedelics:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'entheogens'}})
+
 
 tech = ("Google’s CEO Larry Page on Improving the World, NSA, Security, and Tesla: TED Talks Interview That Can Make You Smile If You’re Oblivious or Make You Want to Vomit If You’re in the Know",
     "U.S. government knew that revelations about NSA’s PRISM program would hurt American Technology companies, but they didn’t “really really care”, Bart Gellman",
     "The Surveillance State Killed BlackBerry, and the Same Fate Awaits Other Tech Giants")
+    
+for title in tech:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'tech'}})
 
 
 comics =  ("All About Comic Books: Readings, Reviews and Recommendations, Framings, Collections and Articles",
@@ -196,6 +260,8 @@ comics =  ("All About Comic Books: Readings, Reviews and Recommendations, Framin
     "Schooling Superman on Totalitarianism: Superman and The Flash have a discussion about gun control while playing chess",
     "In Recognition of Endless Wars and Those Who Profit From Them: The Savage Sword of Conan")
 
+for title in comics:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'comics'}})
 
 
 
@@ -267,6 +333,9 @@ asmr = ("Soft-Spoken Reading of WikiLeaks' Introduction to The Guantánamo Bay F
     "For the ASMR Community: Extended Cuts of Picking My Beard",
     "Eating a Big Bowl of Pomegranate Seeds with a Spoon")
 
+for title in asmr:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'asmr'}})
+
 miscellaneous = ("Free Radical Media Podcast: Mathematics, Education and True Learning with chycho",
     "A New User-Generated News and Information Aggregate Site That Shows A Lot of Promise: A Message to Whoaverse’s Admin, Please, No Defaults",
     "The Library of Alexandria and the Martyrdom of Hypatia: Excerpts from Carl Sagan’s ‘Cosmos’ and Lon Milo Duquette’s ‘Angels, Demons & Gods of the New Millennium’",
@@ -275,6 +344,9 @@ miscellaneous = ("Free Radical Media Podcast: Mathematics, Education and True Le
     "Taking a Bill Hicks Break: What It Means to Be Free",
     "Heads-up to the festival community, thieves are working the circuit; here is one of their scams",
     "Celebrating the Day of Fertility, the 1886 Haymarket Massacre, and a speech from 1961 by Fidel Castro commemorating May Day")
+
+for title in miscellaneous:
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'miscellaneous'}})
 
 
 
