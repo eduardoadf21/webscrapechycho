@@ -24,21 +24,22 @@ book_club = ("Four Video Segments: Reading 21 Books, God's Equation, Tao of I Ch
 "Regarding Bankers and Decentralization: Decentralization Reduces Structural Asymmetries: Excerpts from Nassim Nicholas Taleb’s Skin in the Game",
 "Interventionistas, Transferring Risk, War and Libya: Excerpts from Nassim Nicholas Taleb’s Skin in the Game [ASMR]",
 "Censorship and The Constitution of the United States, Free Speech: Excerpts from Nassim Nicholas Taleb’s Skin in the Game [ASMR]",
-"Silver Rule vs. Golden Rule: How to Treat Others, The Essence of Morality [ASMR]",
+"silver rule",
 "The Hardest Thing I've Had to Do as a Math Tutor: Learning, Schools, Centralized Education [ASMR]",
-"""Book Club: "Skin in the Game: Hidden Asymmetries in Daily Life" - Nassim Nicholas Taleb [ASMR]""",
-"Reading Raymond Feist's The Riftwar Saga, Darkness At Sethanon, Creation [ASMR]",
-"Reading Excerpts from Krishnamurti's 'Education and the Significance of Life' [ASMR]",
-"Review of Raymond Feist's Magician: Apprentice and Master, The Riftwar Saga [Happy ASMR]",
-"ive Books That Have Influenced My Political Perspective over the Years [ASMR]",
-"ar Is A Racket by Major General Smedley Butler [ASMR]",
-"cience Fiction and Fantasy Book Recommendations: Let Me Show You My Collection [ASMR]",
-"et Me Show You My Math Book Collection [ASMR]",
-" Book Recommendations: Some of My Most Influential Reads [ASMR, Best of]",
-"ow to Study: Tip #5: 20 Steps to Reading a Textbook (Language of Math #161 - ASMR)",
-"SMR Math: How to Study: Tip #5: How to Read a Textbook",
-"anguage of Mathematics II (58): Book Recommendations (Part 2 of 2)")
+"Book Club Open Discussion",
+"raymond feist's the riftwar saga",
+"excerpts from krishnamurti",
+"review of raymond feist",
+"my political perspective"
+"war is a racket by",
+"fantasy book",
+"Let Me Show You My Math Book Collection [ASMR]",
+"5 Book Recommendations: Some of My Most Influential Reads [ASMR, Best of]",
+"20 steps",
+"ASMR Math: How to Study: Tip #5: How to Read a Textbook",
+"Language of Mathematics II (58): Book Recommendations (Part 2 of 2)",
+"Language of Mathematics II (57): Book Recommendations (Part 1 of 2)")
 
 for title in book_club:
-    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'book_club'}})
+    posts.find_one_and_update({'title': {"$regex": title,"$options":'is'}},{'$push':{'tag':'book_club'}})
     #posts.find_one_and_update({'title': title},{'$push':{'tag':'book_club'}})

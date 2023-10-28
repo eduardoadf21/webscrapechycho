@@ -153,7 +153,7 @@ for title in nine_eleven:
 
 economics = ("The Mathematics of Economics",
             "The Next Phase of the Economic Collapse Has Begun, Be Prepared: I’m Short the Market, Here Is Why",
-            "The Mantra on Wall Street Is ‘Don’t Fight the Fed’, but Do You Know What the Fed Is Doing? And Where Did Belgium Get $141 Billion to Purchase U.S. Treasury Bonds?",
+            "the mantra",
             "Fragmentation of Bitcoin Community Begins after the Collapse of Mt. Gox and Secondmarket’s Wall Street Exchange Proposal",
             "The Bitcoin Bubble, or is it? Two Charts, Historical Price Movement, and the Conspiracy",
             "Government Shutdown and Appointment of Janet Yellen Guarantees Flow of Funds to Wall Street: They are reducing “two-thirds of this country to subsistence level”, Chris Hedges",
@@ -166,7 +166,7 @@ economics = ("The Mathematics of Economics",
             "Precedent Set: $5 a Gallon Gasoline Leads to Easing of Environmental Regulations for Refineries in California ")
 
 for title in economics:
-    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'economics'}})
+    posts.find_one_and_update({'title': {"$regex":title,"$options":'i'}},{'$push':{'tag':'economics'}})
 
 science = ("Best Explanation of Quantum Field Theory That You Will Ever Hear, Provided by Sean Carroll in Less than 2 Minutes at the 46th Annual Fermilab Users Meeting",
         "Bill Nye, Brian Greene, Neil deGrasse Tyson, and Lawrence Krauss have a brilliant little discussion on the limitations of mathematics, and its importance and relevance to humanity",
@@ -235,12 +235,12 @@ for title in games_gambling:
     posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'games_gambling'}})
 
 
-psychedelics = ("The Cornfield: A Higher Perspective, an Analogy: The Power of Entheogens Explained, What They Allow Us to Do - Full Live Stream Session at: Entheogens: Open Discussion, Session #2, Twitch Live Stream, October 5, 2018",
-    "Open Discussion on Entheogens: Twitch Live Stream (NOTE: Fire Alarm Goes Off At 1:17:00, Loud Sound)",
+psychedelics = ("cornfield",
+    "fire alarm goes off",
     "Breaking the Master Cleanse with Brazilian Cubensis and Salvia Divinorum")
 
 for title in psychedelics:
-    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'entheogens'}})
+    posts.find_one_and_update({'title': {"$regex": title,"$options":'i'}},{'$push':{'tag':'entheogens'}})
 
 
 tech = ("Google’s CEO Larry Page on Improving the World, NSA, Security, and Tesla: TED Talks Interview That Can Make You Smile If You’re Oblivious or Make You Want to Vomit If You’re in the Know",
