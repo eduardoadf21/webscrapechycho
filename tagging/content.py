@@ -1,7 +1,7 @@
 from pymongo_get_database import get_database
 
 chychoVault = get_database()
-posts = chychoVault["posts3"]
+posts = chychoVault["posts6"]
 
 math_articles = ("A Blast from the Past: The Language of Mathematics on Google Maps Street View",
         "An Exercise for the Mind: a 10 by 10 Math Puzzle: a Pattern Recognition Game: Meditation on an Open Maze",

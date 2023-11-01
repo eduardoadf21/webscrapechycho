@@ -1,0 +1,5 @@
+db.collection.updateMany(
+  {},
+  [{ "$set": { "dateField": { "$toDate": "$dateField" } }}]
+);
+

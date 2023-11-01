@@ -2,7 +2,7 @@
 from pymongo_get_database import get_database
 
 chychoVault = get_database()
-posts = chychoVault["posts3"]
+posts = chychoVault["posts6"]
 
 
 titles = ("An Exercise for the Mind: a 10 by 10 Math Puzzle: a Pattern Recognition Game: Meditation on an Open Maze",
@@ -18,7 +18,6 @@ titles = ("An Exercise for the Mind: a 10 by 10 Math Puzzle: a Pattern Recogniti
       "Some advice to those who have lost loved ones",
       "Happy 420! (Almost everything you wanted to know about Cannabis)",
       "Paradigm Shift in Education: Krishnamurti on the Educator, RAW on Ignorance, Gato on the System, and Hamming on Learning",
-      "Sharing a Story from My Father: In Commemoration of the Armenian Genocide",
       "The Dominoes Are Falling, the Tides Are Turning, the War on Drugs Is Ending, but Prohibitionists Just Won’t Give up the Ghost: How to End Prohibition",
       "The Seduction of Dice, The Philosophy of Craps",
       "Some Primary Lessons from Some Amazing Teachers",

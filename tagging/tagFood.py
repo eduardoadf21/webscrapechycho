@@ -1,10 +1,9 @@
 from pymongo_get_database import get_database
 
 chychoVault = get_database()
-posts = chychoVault["posts3"]
+posts = chychoVault["posts6"]
 
-food = (
-    "Yearly Liqueur Cabinet Cleaning & Sampling, Let's Relax [ASMR, Male, Soft-Spoken, Drinking, Recipe]",
+food = ("Yearly Liqueur Cabinet Cleaning & Sampling, Let's Relax [ASMR, Male, Soft-Spoken, Drinking, Recipe]",
     "Grape Harvest From Our Patio Garden Today",
     "Making Blackberry Jam, Cooking Live Stream [How to Recipe, ASMR, Soft-Spoken Male in the Kitchen]",
     "Cooking Live Stream: Let's Make Some Plum Jam [ASMR, Recipe, How to Make, Canning, Jarring]",
@@ -71,4 +70,4 @@ food = (
     "How to Make and Eat Crab Apple Butter, Crabapple Spread")
 
 for title in food:
-    posts.find_one_and_update({'title': title},{'$push':{'tag':'food'}})
+    posts.find_one_and_update({'title': {"$regex": title}},{'$push':{'tag':'food'}})

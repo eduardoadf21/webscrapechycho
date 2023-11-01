@@ -3,7 +3,7 @@
 from pymongo_get_database import get_database
 
 chychoVault = get_database()
-posts = chychoVault["posts3"]
+posts = chychoVault["posts6"]
 
 privacy =  ("""Whispering WikiLeaks' Vault 7 "Year Zero": CIA Hacking Tools Revealed""",
             "NSA’s Desperation for Secrecy Leads to Stupidity, Alienating the Hacker Community: ‘Freedom Downtime’, a Call to Arms",

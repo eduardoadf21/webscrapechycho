@@ -1,7 +1,7 @@
 from pymongo_get_database import get_database
 
 chychoVault = get_database()
-posts = chychoVault["posts3"]
+posts = chychoVault["posts6"]
 
 
 titles = ("Synopsis of Our Present Predicament: What the Future Holds, a Final Word ",

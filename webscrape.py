@@ -1,11 +1,13 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import json
+import dateutil
+import dateutil.parser as parser
 #import re
 
 from pymongo_get_database import get_database
 dbname = get_database()
-collection_name = dbname["posts4"]
+collection_name = dbname["posts6"]
 
 my_url = "https://chycho.blogspot.com/"
 
@@ -23,10 +25,9 @@ def get_posts(dates, posts):
             post['author'] = "chycho"
             title = page_post.find('h3',{"class":"post-title entry-title"}).text
             post['title'] = title.replace('\n','')
-            post['date'] = date.find('h2',{"class":"date-header"}).text
+            formatted_date = parser.parse(date.find('h2',{"class":"date-header"}).text)
+            post['date'] = formatted_date.isoformat()
             post['body'] = page_post.find('div',{"class":"post-body entry-content"}).prettify()
-            title_block = page_post.find('h3',{"class":"post-title entry-title"})
-            post['old_link'] = title_block.find('a',href=True)
             post['tag'] = []
             posts.append(post)
 
@@ -44,7 +45,7 @@ while nextPage is not None:
     request = urlopen(my_url)
     homepage = request.read()
     homepageSoup = BeautifulSoup(homepage, "html.parser")
-    #collection_name.insert_many(posts)
+    collection_name.insert_many(posts)
 
 
 request.close()
